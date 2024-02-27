@@ -1,55 +1,60 @@
 {
-  "title":"Você seria um heroi ou vilão ?",
-  "questions":[
+  "title": "Você Seria um Heroi ou Vilão ?",
+  "questions": [
     {
-      "id":1,
-      "question": "Qual super poder você escolheria ?",
-      "options":[
-        {"id": 1, "name":"Raios-Lasers", "alias":"A"},
-        {"id": 2, "name":"Voar", "alias":"B"},
-        {"id": 3, "name":"Explodir coisas", "alias":"A"},
-        {"id": 4, "name":"Curar feridas", "alias":"B"},
-        {"id": 5, "name":"Soltar fogo pelas mãos", "alias":"A"}
+      "id": 1,
+      "question": "Qual Super Poder Você Escolheria ?",
+      "image": "./assets/imgs/super-heroes-1.png",
+      "options": [
+        { "id": 1, "name": "Raios-Lasers", "alias": "A" },
+        { "id": 2, "name": "Voar", "alias": "B" },
+        { "id": 3, "name": "Explodir coisas", "alias": "A" },
+        { "id": 4, "name": "Curar feridas", "alias": "B" },
+        { "id": 5, "name": "Soltar fogo pelas mãos", "alias": "A" }
       ]
     },
     {
-      "id":2,
-      "question": "Quem você salvaria primeiro ?",
-      "options":[
-        {"id": 1, "name":"Crianças", "alias":"A"},
-        {"id": 2, "name":"Idosos", "alias":"A"},
-        {"id": 3, "name":"Não saberia escolher", "alias":"B"}
+      "id": 2,
+      "question": "Quem Você Salvaria Primeiro ?",
+      "image": "./assets/imgs/super-heroes-2.png",
+      "options": [
+        { "id": 1, "name": "Crianças", "alias": "A" },
+        { "id": 2, "name": "Idosos", "alias": "A" },
+        { "id": 3, "name": "Não Sei", "alias": "B" }
       ]
     },
     {
-      "id":3,
-      "question": "Qual a sua maior preocupação ao enfretar outro super ser ?",
-      "options":[
-        {"id": 1, "name":"Não destruir prédios", "alias":"B"},
-        {"id": 2, "name":"Socar a cara do inimigo", "alias":"A"},
-        {"id": 3, "name":"Não sujar meu traje", "alias":"A"},
-        {"id": 4, "name":"Não deixar ninguém se ferir", "alias":"B"}
+      "id": 3,
+      "question": "Qual a Sua Maior Preocupação ao Enfrentar Outro Super Ser ?",
+      "image": "./assets/imgs/super-heroes-3.jpg",
+      "options": [
+        { "id": 1, "name": "Não destruir prédios", "alias": "B" },
+        { "id": 2, "name": "Socar a cara do inimigo", "alias": "A" },
+        { "id": 3, "name": "Não sujar meu traje", "alias": "A" },
+        { "id": 4, "name": "Não deixar ninguém se ferir", "alias": "B" }
       ]
     },
     {
-      "id":4,
-      "question": "Qual o seu maior foco ?",
-      "options":[
-        {"id": 1, "name":"Ficar rico com poderes", "alias":"A"},
-        {"id": 2, "name":"Salvar a cidade", "alias":"B"}
+      "id": 4,
+      "question": "Qual o Seu Maior Foco ?",
+      "image": "./assets/imgs/super-heroes-4.png",
+      "options": [
+        { "id": 1, "name": "Ficar rico com poderes", "alias": "A" },
+        { "id": 2, "name": "Salvar a cidade", "alias": "B" }
       ]
     },
     {
-      "id":5,
-      "question": "Qual o seu apelido de super ser ?",
-      "options":[
-        {"id": 1, "name":"O Terrivel", "alias":"A"},
-        {"id": 2, "name":"Amigo da vizinhança", "alias":"B"}
+      "id": 5,
+      "question": "Qual o Seu Apelido de Super Ser ?",
+      "image": "./assets/imgs/super-heroes-5.jpg",
+      "options": [
+        { "id": 1, "name": "O Terrível", "alias": "A" },
+        { "id": 2, "name": "Amigo da vizinhança", "alias": "B" }
       ]
     }
   ],
-  "results":{
-    "A": "Você muito provavelmente seria um super vilão!",
-    "B": "Você muito provavelmente seria um super Herói!"
+  "results": {
+    "A": "Você provavelmente seria um Super Vilão!",
+    "B": "Você provavelmente seria um Super Herói!"
   }
 }
