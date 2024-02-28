@@ -1,7 +1,18 @@
 .quizz__container {
-  width: 80%;
-  margin: auto;
-  margin-top: 20px;
+  /* max-width: 80%; */
+  /* margin-top: 20px; */
+  display: grid;
+  grid-template-columns: 7.5% 85% 7.5%;
+  /* grid-template-rows: 5% 7.5% 3.5% 44% 5% 35%; */
+  /* grid-template-rows: auto 7.5% auto 30% repeat(2, auto); */
+  gap: 0.5rem;
+  width: 70vw;
+  margin: 0 auto;
+  max-height: 100vh;
+}
+
+.quizz__container * {
+  grid-column: 2;
 }
 
 .quizz_logo {
@@ -9,65 +20,139 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
+  grid-row: 2;
 }
 
-.quizz_logo > h3 {
-  margin-top: 1rem;
+.quizz_logo > img {
+  height: 5vw;
+  max-height: 5vw;
+}
+
+.quizz_title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-row: 3;
+}
+
+.quizz_image {
+  grid-row: 4;
+}
+
+.quizz_image > img {
+  width: 100%;
+  height: 22.75vw;
+  max-height: 22.75vw;
+  border-radius: 6px;
+}
+
+.question-answer-align {
+  display: flex;
+  flex-direction: column;
+  grid-row: 5;
+  gap: 1rem;
 }
 
 .quizz_questions {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #4224d9;
-  border-radius: 8px;
-  background-color: #644ed2;
-  width: 100%;
-  height: 2.5rem;
-  font-size: 20px;
-  margin-bottom: 0.75rem;
+  display: grid;
+  grid-row: 5;
 }
 
 .quizz_questions > h3 {
+  display: grid;
+  align-items: center;
+  font-size: 20px;
+  height: 100%;
+  grid-column: 1;
   text-align: center;
+  border: 1px solid #4224d9;
+  border-radius: 4px;
+  background-color: #644ed2;
 }
 
 .quizz_options {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: auto;
-  margin-bottom: 20px;
-  gap: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 0.25rem;
+  grid-row: 6;
+  /* margin-bottom: 20px; */
 }
 
-.btn-option {
+.quizz_options.num-2 .btn-option-1,
+.quizz_options.num-3 .btn-option-1,
+.quizz_options.num-4 .btn-option-1,
+.quizz_options.num-4 .btn-option-3,
+.quizz_options.num-5 .btn-option-1,
+.quizz_options.num-5 .btn-option-3 {
+  grid-column: 1;
+}
+
+.quizz_options.num-2 .btn-option-2,
+.quizz_options.num-3 .btn-option-2,
+.quizz_options.num-4 .btn-option-2,
+.quizz_options.num-4 .btn-option-4,
+.quizz_options.num-5 .btn-option-2,
+.quizz_options.num-5 .btn-option-4 {
+  grid-column: 2;
+}
+
+.quizz_options.num-5 .btn-option-5 {
+  grid-column: 1 / span 2;
+  grid-row: 3;
+}
+
+.quizz_options.num-3 .btn-option-3 {
+  grid-column: 1 / span 2;
+  grid-row: 2;
+}
+
+.btn-options {
   background-color: transparent;
-  border-radius: 8px;
+  border-radius: 6px;
   border: 1px outset #0e067c;
-  width: 49%;
-  display: inline-block;
   cursor: pointer;
   color: #cccaca;
   font-size: 17px;
-  padding: 16px 31px;
+  padding: 10px 0;
   text-decoration: none;
-  text-shadow: 0px 1px 0px #2f6627;
+  text-shadow: 0px 1px 0px #1f1147;
   background-color: #170b3a;
   transition: background-color 0.8s ease;
 }
 
-.btn-option:hover {
+.btn-options:hover {
   background-color: #371da8;
 }
 
-.btn-option:active {
+.btn-options:active {
   position: relative;
   top: 1px;
 }
 
 .quizz_results {
+  text-align: center;
+}
+
+.quizz_results > h1,
+.quizz_results > p {
+  text-align: center;
+}
+
+.quizz_results.img {
+  grid-row: 4;
+}
+
+.quizz_results.title {
+  grid-row: 5;
+}
+
+.quizz_results.paragraph {
+  grid-row: 6;
+}
+
+.btn-options .quizz_results {
   width: 100%;
   background-color: #1f0539;
   border-radius: 10px;
@@ -77,23 +162,22 @@
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
 }
 
-.quizz_results > img {
-  width: 99%;
-  max-height: 500px;
+.final-img {
+  width: 100%;
+  max-height: 364px;
   border-radius: 6px;
 }
 
 .align-button {
-  display: flex;
-  justify-content: center;
-  width: 100%;
+  margin: 0 auto;
+  grid-row: 7;
 }
 
 .restart-button {
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
   padding: 1rem;
   border-radius: 6px;
   background-color: #170b3a;
@@ -103,16 +187,4 @@
 .restart-button:hover {
   cursor: pointer;
   background-color: #371da8;
-}
-
-.quizz_image {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 0.25rem;
-}
-
-.quizz_image > img {
-  width: 99%;
-  max-height: 550px;
-  border-radius: 6px;
 }

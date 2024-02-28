@@ -1,6 +1,8 @@
-<div class="quizz__container">
+<div class="quizz__container" [ngClass]="{ finished: finished }">
   <div class="quizz_logo">
     <img src="assets/imgs/logo.png" alt="" srcset="" />
+  </div>
+  <div class="quizz_title">
     <h3>{{ title }}</h3>
   </div>
 
@@ -8,28 +10,36 @@
     <img [src]="getQuestionImage(questionSelected)" />
   </div>
 
-  <div *ngIf="!finished" class="quizz_questions">
-    <h3>{{ questionSelected.question }}</h3>
-  </div>
-
-  <div *ngIf="!finished" class="quizz_options">
-    <button
-      *ngFor="let option of questionSelected.options; let i = index"
-      (click)="playerChoose(option.alias, option.image)"
-      class="btn-option"
+  <div *ngIf="!finished" class="question-answer-align">
+    <div *ngIf="!finished" class="quizz_questions">
+      <h3>{{ questionSelected.question }}</h3>
+    </div>
+    <div
+      *ngIf="!finished"
+      [ngClass]="'quizz_options num-' + questionSelected.options.length"
     >
-      {{ option.name }}
-    </button>
+      <button
+        *ngFor="let option of questionSelected.options; let i = index"
+        (click)="playerChoose(option.alias, option.image)"
+        class="btn-options btn-option-{{ option.id }}"
+      >
+        {{ option.name }}
+      </button>
+    </div>
   </div>
 
-  <div *ngIf="finished" class="quizz_results">
+  <div *ngIf="finished" class="quizz_results img">
+    <img [src]="finalImage" alt="Imagem do Resultado" class="final-img" />
+  </div>
+  <div *ngIf="finished" class="quizz_results title">
     <h1>O Seu resultado é:</h1>
+  </div>
+  <div *ngIf="finished" class="quizz_results paragraph">
     <p>{{ answerSelected }}</p>
-    <img [src]="finalImage" alt="Imagem do Resultado" />
   </div>
 
-  <div class="align-button">
-    <button *ngIf="finished" (click)="restartQuiz()" class="restart-button">
+  <div *ngIf="finished" class="align-button">
+    <button (click)="restartQuiz()" class="restart-button">
       Reiniciar Questionário
     </button>
   </div>
